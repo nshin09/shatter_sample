@@ -1,0 +1,378 @@
+11:32:55 DEBUG : Logs will be stored at 'C:/Users/Jun_H/shattersample-1/IDE.log'.
+11:32:57 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Jun_H\shattersample-1\temp_xsdb_launch_script.tcl
+11:32:57 INFO  : Registering command handlers for Vitis TCF services
+11:32:59 INFO  : Platform repository initialization has completed.
+11:32:59 INFO  : XSCT server has started successfully.
+11:32:59 INFO  : Successfully done setting XSCT server connection channel  
+11:32:59 INFO  : plnx-install-location is set to ''
+11:33:00 INFO  : Successfully done setting workspace for the tool. 
+11:33:00 INFO  : Successfully done query RDI_DATADIR 
+11:33:46 INFO  : Result from executing command 'getProjects': toplevel
+11:33:46 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+11:33:48 WARN  : An unexpected exception occurred in the module 'platform project logging'
+11:33:49 INFO  : Platform 'toplevel' is added to custom repositories.
+11:33:54 INFO  : Platform 'toplevel' is added to custom repositories.
+11:35:33 INFO  : Result from executing command 'removePlatformRepo': 
+11:35:45 INFO  : Result from executing command 'getProjects': toplevel
+11:35:45 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+11:35:47 INFO  : Checking for BSP changes to sync application flags for project 'twizzy'...
+11:36:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:17 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+11:36:17 INFO  : 'jtag frequency' command is executed.
+11:36:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+11:36:19 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+11:36:19 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:19 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+11:36:19 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:36:19 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:19 INFO  : System reset is completed.
+11:36:22 INFO  : 'after 3000' command is executed.
+11:36:22 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:22 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+11:36:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+11:36:22 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:22 INFO  : 'con' command is executed.
+11:36:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:36:23 INFO  : Disconnected from the channel tcfchan#3.
+11:36:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:34 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+11:36:34 INFO  : 'jtag frequency' command is executed.
+11:36:37 ERROR : no targets found with "jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"". available targets:
+  1  xc7s50
+     2  MicroBlaze Debug Module at USER2
+        3  MicroBlaze #0 (Running)
+11:36:37 ERROR : Exception occured while running Program Device.
+java.lang.RuntimeException: no targets found with "jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"". available targets:
+  1  xc7s50
+     2  MicroBlaze Debug Module at USER2
+        3  MicroBlaze #0 (Running)
+11:36:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:36:37 ERROR : no targets found with "jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"". available targets:
+  1  xc7s50
+     2  MicroBlaze Debug Module at USER2
+        3  MicroBlaze #0 (Running)
+11:36:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:52 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+11:36:52 INFO  : 'jtag frequency' command is executed.
+11:36:55 ERROR : no targets found with "jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"". available targets:
+  1  xc7s50
+     2  MicroBlaze Debug Module at USER2
+        3  MicroBlaze #0 (Running)
+11:36:55 ERROR : Exception occured while running Program Device.
+java.lang.RuntimeException: no targets found with "jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"". available targets:
+  1  xc7s50
+     2  MicroBlaze Debug Module at USER2
+        3  MicroBlaze #0 (Running)
+11:36:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:36:55 ERROR : no targets found with "jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"". available targets:
+  1  xc7s50
+     2  MicroBlaze Debug Module at USER2
+        3  MicroBlaze #0 (Running)
+11:37:31 DEBUG : Logs will be stored at 'C:/Users/Jun_H/shattersample-1/IDE.log'.
+11:37:32 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Jun_H\shattersample-1\temp_xsdb_launch_script.tcl
+11:37:37 INFO  : XSCT server has started successfully.
+11:37:37 INFO  : plnx-install-location is set to ''
+11:37:37 INFO  : Successfully done setting XSCT server connection channel  
+11:37:37 INFO  : Successfully done setting workspace for the tool. 
+11:37:37 INFO  : Platform repository initialization has completed.
+11:37:38 INFO  : Registering command handlers for Vitis TCF services
+11:37:39 INFO  : Successfully done query RDI_DATADIR 
+11:37:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:37:45 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+11:37:45 INFO  : 'jtag frequency' command is executed.
+11:37:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+11:37:47 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+11:37:47 INFO  : Context for processor 'microblaze_0' is selected.
+11:37:47 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+11:37:47 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:37:47 INFO  : Context for processor 'microblaze_0' is selected.
+11:37:47 INFO  : System reset is completed.
+11:37:50 INFO  : 'after 3000' command is executed.
+11:37:50 INFO  : Context for processor 'microblaze_0' is selected.
+11:37:50 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+11:37:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+11:37:50 INFO  : Context for processor 'microblaze_0' is selected.
+11:37:50 INFO  : 'con' command is executed.
+11:37:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:37:51 INFO  : Disconnected from the channel tcfchan#1.
+14:29:16 DEBUG : Logs will be stored at 'C:/Users/Jun_H/shattersample-1/IDE.log'.
+14:29:17 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Jun_H\shattersample-1\temp_xsdb_launch_script.tcl
+14:29:19 INFO  : XSCT server has started successfully.
+14:29:19 INFO  : plnx-install-location is set to ''
+14:29:19 INFO  : Successfully done setting XSCT server connection channel  
+14:29:19 INFO  : Successfully done setting workspace for the tool. 
+14:29:19 INFO  : Platform repository initialization has completed.
+14:29:20 INFO  : Registering command handlers for Vitis TCF services
+14:29:21 INFO  : Successfully done query RDI_DATADIR 
+14:31:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:31:33 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+14:31:33 INFO  : 'jtag frequency' command is executed.
+14:31:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:31:35 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+14:31:35 INFO  : Context for processor 'microblaze_0' is selected.
+14:31:35 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+14:31:35 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+14:31:35 INFO  : Context for processor 'microblaze_0' is selected.
+14:31:35 INFO  : System reset is completed.
+14:31:38 INFO  : 'after 3000' command is executed.
+14:31:38 INFO  : Context for processor 'microblaze_0' is selected.
+14:31:38 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+14:31:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+14:31:38 INFO  : Context for processor 'microblaze_0' is selected.
+14:31:38 INFO  : 'con' command is executed.
+14:31:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+14:31:38 INFO  : Disconnected from the channel tcfchan#1.
+14:40:00 INFO  : Hardware specification for platform project 'toplevel' is updated.
+14:40:21 INFO  : Result from executing command 'removePlatformRepo': 
+14:40:34 INFO  : Result from executing command 'getProjects': toplevel
+14:40:34 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+14:40:35 INFO  : Checking for BSP changes to sync application flags for project 'twizzy'...
+14:40:35 WARN  : Failed to closehw "C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa"
+Reason: Cannot close hw design 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+Design is not opened in the current session.
+
+14:40:38 INFO  : The hardware specification used by project 'twizzy' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+14:40:38 INFO  : The file 'C:\Users\Jun_H\shattersample-1\twizzy\_ide\bitstream\toplevel.bit' stored in project is removed.
+14:40:38 INFO  : The file 'C:\Users\Jun_H\shattersample-1\twizzy\_ide\bitstream\toplevel.mmi' stored in project is removed.
+14:40:39 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jun_H\shattersample-1\twizzy\_ide\bitstream' in project 'twizzy'.
+14:40:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:52 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+14:40:52 INFO  : 'jtag frequency' command is executed.
+14:40:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:40:53 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+14:40:54 INFO  : Context for processor 'microblaze_0' is selected.
+14:40:54 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+14:40:54 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+14:40:54 INFO  : Context for processor 'microblaze_0' is selected.
+14:40:54 INFO  : System reset is completed.
+14:40:57 INFO  : 'after 3000' command is executed.
+14:40:57 INFO  : Context for processor 'microblaze_0' is selected.
+14:40:57 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+14:40:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+14:40:57 INFO  : Context for processor 'microblaze_0' is selected.
+14:40:57 INFO  : 'con' command is executed.
+14:40:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+14:40:57 INFO  : Disconnected from the channel tcfchan#4.
+14:54:41 INFO  : Hardware specification for platform project 'toplevel' is updated.
+14:54:55 INFO  : Result from executing command 'removePlatformRepo': 
+14:55:06 INFO  : Result from executing command 'getProjects': toplevel
+14:55:06 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|C:/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+14:55:07 INFO  : Checking for BSP changes to sync application flags for project 'twizzy'...
+14:55:09 INFO  : The hardware specification used by project 'twizzy' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+14:55:09 INFO  : The file 'C:\Users\Jun_H\shattersample-1\twizzy\_ide\bitstream\toplevel.bit' stored in project is removed.
+14:55:09 INFO  : The file 'C:\Users\Jun_H\shattersample-1\twizzy\_ide\bitstream\toplevel.mmi' stored in project is removed.
+14:55:09 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jun_H\shattersample-1\twizzy\_ide\bitstream' in project 'twizzy'.
+14:55:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:55:18 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+14:55:18 INFO  : 'jtag frequency' command is executed.
+14:55:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+14:55:19 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+14:55:19 INFO  : Context for processor 'microblaze_0' is selected.
+14:55:20 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+14:55:20 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+14:55:20 INFO  : Context for processor 'microblaze_0' is selected.
+14:55:20 INFO  : System reset is completed.
+14:55:23 INFO  : 'after 3000' command is executed.
+14:55:23 INFO  : Context for processor 'microblaze_0' is selected.
+14:55:23 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+14:55:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+14:55:23 INFO  : Context for processor 'microblaze_0' is selected.
+14:55:23 INFO  : 'con' command is executed.
+14:55:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+14:55:23 INFO  : Disconnected from the channel tcfchan#7.
+16:54:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:54:59 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+16:54:59 INFO  : 'jtag frequency' command is executed.
+16:54:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+16:55:01 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+16:55:01 INFO  : Context for processor 'microblaze_0' is selected.
+16:55:01 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+16:55:01 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:55:01 INFO  : Context for processor 'microblaze_0' is selected.
+16:55:01 INFO  : System reset is completed.
+16:55:04 INFO  : 'after 3000' command is executed.
+16:55:04 INFO  : Context for processor 'microblaze_0' is selected.
+16:55:04 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+16:55:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+16:55:04 INFO  : Context for processor 'microblaze_0' is selected.
+16:55:05 INFO  : 'con' command is executed.
+16:55:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:55:05 INFO  : Disconnected from the channel tcfchan#8.
+19:31:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:31:18 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+19:31:18 INFO  : 'jtag frequency' command is executed.
+19:31:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+19:31:20 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+19:31:20 INFO  : Context for processor 'microblaze_0' is selected.
+19:31:20 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+19:31:20 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:31:20 INFO  : Context for processor 'microblaze_0' is selected.
+19:31:20 INFO  : System reset is completed.
+19:31:23 INFO  : 'after 3000' command is executed.
+19:31:23 INFO  : Context for processor 'microblaze_0' is selected.
+19:31:23 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+19:31:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+19:31:24 INFO  : Context for processor 'microblaze_0' is selected.
+19:31:24 INFO  : 'con' command is executed.
+19:31:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:31:24 INFO  : Disconnected from the channel tcfchan#9.
+01:04:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:04:43 INFO  : Jtag cable 'RealDigital Boo 88742923021CA' is selected.
+01:04:43 INFO  : 'jtag frequency' command is executed.
+01:04:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+01:04:45 INFO  : Device configured successfully with "C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit"
+01:04:45 INFO  : Context for processor 'microblaze_0' is selected.
+01:04:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa'.
+01:04:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:04:45 INFO  : Context for processor 'microblaze_0' is selected.
+01:04:45 INFO  : System reset is completed.
+01:04:48 INFO  : 'after 3000' command is executed.
+01:04:48 INFO  : Context for processor 'microblaze_0' is selected.
+01:04:48 INFO  : The application 'C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf' is downloaded to processor 'microblaze_0'.
+01:04:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88742923021CA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Jun_H/shattersample-1/twizzy/_ide/bitstream/toplevel.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Jun_H/shattersample-1/toplevel/export/toplevel/hw/toplevel.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Jun_H/shattersample-1/twizzy/Debug/twizzy.elf
+----------------End of Script----------------
+
+01:04:49 INFO  : Context for processor 'microblaze_0' is selected.
+01:04:49 INFO  : 'con' command is executed.
+01:04:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+01:04:49 INFO  : Disconnected from the channel tcfchan#10.
