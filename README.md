@@ -1,0 +1,1 @@
+Collaborative project by Nathan Shin and Jun Hayakawa. More information on how the project functions and how to use it can be found in the "Shattersample Report" and "shattersample user manual". Project is designed to run on an AMD XC7S50-CSG324A Spartan 7 FPGA board. 
